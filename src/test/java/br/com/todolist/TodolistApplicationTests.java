@@ -1,10 +1,10 @@
-package br.com.thalison.mvc.readinglist;
+package br.com.todolist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ReadinglistApplicationTests {
+class TodolistApplicationTests {
 
 	@Test
 	void contextLoads() {
