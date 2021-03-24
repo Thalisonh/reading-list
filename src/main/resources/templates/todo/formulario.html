@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="~{base :: head}"></head>
+<body>
+    <div th:replace="~{base :: logo}"></div>
+    <form action="">
+        <div>
+            <label for="titulo">Titulo</label>
+            <input name="titulo" type="text" placeholder="Titulo do livro">
+        </div>
+        <div>
+            <label for="autor">Autor</label>
+            <input name="autor" type="text" placeholder="Autor do livro">
+        </div>
+        <div>
+            <label for="">UrlImagem</label>
+            <input type="text" name="UrlImagem" placeholder="Url da imagem">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Adicionar</button>
+          </div>
+    </form>
+    
+</body>
+</html>
