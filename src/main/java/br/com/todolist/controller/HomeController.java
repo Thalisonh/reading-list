@@ -24,6 +24,10 @@ public class HomeController {
         Query query = entityManager.createQuery("select t from TodoList t", TodoList.class);
         List<TodoList> todolist = query.getResultList();
 
+        for(int i = 0; i < todolist.size(); i++){
+            System.out.println(todolist.get(i).getNome());;
+        }
+        
         model.addAttribute("todolist", todolist);
 
         return "home";

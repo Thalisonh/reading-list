@@ -16,7 +16,7 @@
 
         .logo {
             font-family: 'Handlee', cursive;
-            font-size:  2.5rem;
+            font-size: 2.5rem;
         }
     </style>
 </head>
@@ -29,3 +29,13 @@
 <div th:fragment="titulo(valor)">
     <h1 th:text="${valor}"></h1>
 </div>
+
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between mb-3">
+
+    <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Todos</a>
+        <a class="nav-item nav-link" href="">Todos</a>
+        <a class="nav-item nav-link" href="">Lidos</a>
+    </div>
+    <a href="todo/formulario"><button type="button" class="btn btn-primary">Adicionar</button></a>
+</nav>
