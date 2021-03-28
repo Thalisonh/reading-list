@@ -33,10 +33,10 @@
 <nav th:fragment="nav" class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between mb-3">
 
     <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/home">Todos</a>
-        <a class="nav-item nav-link" href="/home/queroler">Quero Ler</a>
-        <a class="nav-item nav-link" href="/home/lendo">Lendo</a>
-        <a class="nav-item nav-link" href="/home/lidos">Lidos</a>
+        <a th:classappend="${status} == null ? 'active'"  class="nav-item nav-link" href="/home">Todos</a>
+        <a th:classappend="${status} == 'queroler' ? 'active'"  class="nav-item nav-link" href="/home/queroler">Quero Ler</a>
+        <a th:classappend="${status} == 'lendo' ? 'active'" class="nav-item nav-link" href="/home/lendo">Lendo</a>
+        <a th:classappend="${status} == 'lido' ? 'active'"  class="nav-item nav-link" href="/home/lidos">Lidos</a>
     </div>
     <a href="todo/formulario"><button type="button" class="btn btn-primary">Adicionar</button></a>
 </nav>
