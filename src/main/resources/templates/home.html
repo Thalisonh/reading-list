@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head th:replace="~{base :: head}"></head>
-    <style>
-      #imagem{
-        max-width:200px;
-        max-height:150px;
-        width: auto;
-        height: auto;
-      }
-    </style>
+
+<head th:replace="~{base :: head}"></head>
+<style>
+  #imagem {
+    max-width: 200px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+  }
+</style>
+
 <body>
-    <div th:replace="~{base :: logo}"></div>
-    <div class="container">
-      <nav th:replace="~{base :: nav}"></nav>
-    </div>
-    
+  <div th:replace="~{base :: logo}"></div>
+  <div class="container">
+    <nav th:replace="~{base :: nav}"></nav>
 
     <!-- lista do lado direito, e variavel do lado esquedo -->
+
     <div class="card mb-3" th:each="todolists : ${todolist}">
-        <img id="imagem" th:src="${todolists.urlImagem}" src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title" th:text="${todolists.nome}">Card title</h5>
-          <h6 th:text="${todolists.autor}"></h6>
-          <p class="card-text" th:text="${todolists.descricao}"></p>
-        </div>
+      <th:block th:switch="${todolists.status.name()}">
+        <h5 th:case="'LENDO'" class="card mb-3 alert-warning">Featured</h5>
+        <h5 th:case="'QUEROLER'" class="card mb-3 alert-info">Featured</h5>
+        <h5 th:case="'LIDO'" class="card mb-3 alert-success">Featured</h5>
+      </th:block>
+
+      <img id="imagem" th:src="${todolists.urlImagem}" src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" th:text="${todolists.nome}">Card title</h5>
+        <h6 th:text="${todolists.autor}"></h6>
+        <p class="card-text" th:text="${todolists.descricao}"></p>
       </div>
-    
+    </div>
+  </div>
+
 </body>
+
 </html>

@@ -1,6 +1,8 @@
 package br.com.todolist.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +17,9 @@ public class TodoList {
     private String autor;
     private String urlImagem;
     private String descricao;
+
+    @Enumerated(EnumType.STRING)
+    private StatusTodo status;
 
     public Long getId() {
         return id;
@@ -46,6 +51,10 @@ public class TodoList {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-
+    public StatusTodo getStatus() {
+        return status;
+    }
+    public void setStatus(StatusTodo status) {
+        this.status = status;
+    }
 }
